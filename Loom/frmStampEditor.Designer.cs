@@ -180,7 +180,7 @@
 			// colColor
 			// 
 			this.colColor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.colColor.DataPropertyName = "BrushName";
+			this.colColor.DataPropertyName = "Color";
 			this.colColor.HeaderText = "Color";
 			this.colColor.Name = "colColor";
 			// 

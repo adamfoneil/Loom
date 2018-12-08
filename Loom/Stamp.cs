@@ -34,7 +34,7 @@ namespace Loom
 			foreach (var point in Fill)
 			{
 				var rect = point.GetRectangle(scale, gridX, gridY);
-				graphics.FillRectangle(point.Brush, rect);
+				graphics.FillRectangle(new SolidBrush(point.Color), rect);
 
 				graphics.DrawString($"{point.X}, {point.Y}", Font, Brushes.PapayaWhip, rect);
 
@@ -44,23 +44,21 @@ namespace Loom
 
 	public class StampPoint
 	{
-		public StampPoint(int x, int y, Brush brush)
+		public StampPoint()
+		{
+		}
+
+		public StampPoint(int x, int y, Color color)
 		{
 			X = x;
 			Y = y;
-			Brush = brush;
+			Color = color;
 		}
 
 		public int X { get; set; }
 		public int Y { get; set; }
-		[JsonIgnore]
-		public Brush Brush { get; set; }
+		public Color Color { get; set; }
 
-		public string BrushName
-		{
-			get { return typeof(Brush).Name; }
-			set { Brush = new SolidBrush(Color.FromName(value)); }
-		}
 
 		public Rectangle GetRectangle(int scale, int gridX, int gridY)
 		{

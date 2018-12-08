@@ -40,6 +40,8 @@ namespace Loom
 			tbHeight.DataBindings.Add(new Binding("Text", stamp, "Height"));
 
 			BindingList<StampPoint> points = new BindingList<StampPoint>(stamp.Fill);
+			points.AllowNew = true;
+			points.AllowEdit = true;
 			dgvStamp.DataSource = points;
 		}
 
@@ -58,7 +60,7 @@ namespace Loom
 		{			
 			FillColorOptions();
 
-			_stamp = new Stamp(1, 1, new List<StampPoint>() { new StampPoint(0, 0, Brushes.AliceBlue) }, this.Font);
+			_stamp = new Stamp(1, 1, new List<StampPoint>() { new StampPoint(0, 0, Color.AliceBlue) }, this.Font);
 			InitDataBinding(_stamp);
 		}
 
@@ -67,11 +69,11 @@ namespace Loom
 			// thanks to https://stackoverflow.com/a/14047729/2023653
 
 			colColor.Items.Clear();
-			colColor.ValueMember = "Brush";
+			colColor.ValueMember = "Color";
 			colColor.DisplayMember = "Name";
 
-			var colors = typeof(Brushes).GetProperties().Select(pi => new ColorOption() { Name = pi.Name, Brush = pi.GetValue(null) as Brush }).ToArray();
-			foreach (var item in colors) colColor.Items.Add(item);
+			var colors = typeof(Brushes).GetProperties().Select(pi => pi.Name).ToArray();
+			foreach (var item in colors) colColor.Items.Add(new ColorOption() { Color = Color.FromName(item), Name = item });
 		}
 
 		private void dgvStamp_DataError(object sender, DataGridViewDataErrorEventArgs e)

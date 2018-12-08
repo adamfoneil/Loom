@@ -24,12 +24,12 @@ namespace Loom
 
 			var checkeredStamp = new Stamp(3, 2, new List<StampPoint>()
 			{
-				new StampPoint(0, 0, Brushes.DarkBlue),
-				new StampPoint(1, 0, Brushes.OrangeRed),
-				new StampPoint(0, 1, Brushes.OrangeRed),
-				new StampPoint(1, 1, Brushes.DarkBlue),
-				new StampPoint(2, 0, Brushes.DarkGoldenrod),
-				new StampPoint(2, 1, Brushes.DarkKhaki)
+				new StampPoint(0, 0, Color.DarkCyan),
+				new StampPoint(1, 0, Color.OrangeRed),
+				new StampPoint(0, 1, Color.OrangeRed),
+				new StampPoint(1, 1, Color.DarkCyan),
+				new StampPoint(2, 0, Color.DarkGoldenrod),
+				new StampPoint(2, 1, Color.DarkKhaki)
 			}, this.Font);
 
 			for (int x = 0; x < 25; x += checkeredStamp.Width)

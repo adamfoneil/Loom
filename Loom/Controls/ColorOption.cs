@@ -5,7 +5,7 @@ namespace Loom.Controls
 	public class ColorOption
 	{
 		public string Name { get; set; }
-		public Brush Brush { get; set; }
+		public Color Color { get; set; }
 
 		public override string ToString()
 		{
