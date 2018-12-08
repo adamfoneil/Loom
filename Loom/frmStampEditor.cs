@@ -1,6 +1,7 @@
 ﻿using JsonSettings;
 using Loom.Controls;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
@@ -38,11 +39,7 @@ namespace Loom
 			tbWidth.DataBindings.Add(new Binding("Text", stamp, "Width"));
 			tbHeight.DataBindings.Add(new Binding("Text", stamp, "Height"));
 
-			BindingList<StampPoint> points = new BindingList<StampPoint>();
-			if (stamp.Fill?.Any() ?? false)
-			{
-				foreach (var point in stamp.Fill) points.Add(point);
-			}
+			BindingList<StampPoint> points = new BindingList<StampPoint>(stamp.Fill);
 			dgvStamp.DataSource = points;
 		}
 
@@ -60,7 +57,8 @@ namespace Loom
 		private void frmStampEditor_Load(object sender, EventArgs e)
 		{			
 			FillColorOptions();
-			_stamp = new Stamp(1, 1, null, this.Font);
+
+			_stamp = new Stamp(1, 1, new List<StampPoint>() { new StampPoint(0, 0, Brushes.AliceBlue) }, this.Font);
 			InitDataBinding(_stamp);
 		}
 

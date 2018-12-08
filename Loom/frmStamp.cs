@@ -22,7 +22,7 @@ namespace Loom
 		{
 			const int gridSize = 50;
 
-			var checkeredStamp = new Stamp(3, 2, new StampPoint[]
+			var checkeredStamp = new Stamp(3, 2, new List<StampPoint>()
 			{
 				new StampPoint(0, 0, Brushes.DarkBlue),
 				new StampPoint(1, 0, Brushes.OrangeRed),

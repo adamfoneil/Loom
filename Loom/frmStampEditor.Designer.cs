@@ -31,9 +31,6 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStampEditor));
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.dgvStamp = new System.Windows.Forms.DataGridView();
-			this.colX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colColor = new System.Windows.Forms.DataGridViewComboBoxColumn();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.tsbOpen = new System.Windows.Forms.ToolStripButton();
 			this.tsbSave = new System.Windows.Forms.ToolStripButton();
@@ -42,6 +39,9 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.tbWidth = new System.Windows.Forms.TextBox();
 			this.tbHeight = new System.Windows.Forms.TextBox();
+			this.colX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colColor = new System.Windows.Forms.DataGridViewComboBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
@@ -74,32 +74,11 @@
             this.colColor});
 			this.dgvStamp.Dock = System.Windows.Forms.DockStyle.Top;
 			this.dgvStamp.Location = new System.Drawing.Point(0, 68);
+			this.dgvStamp.MultiSelect = false;
 			this.dgvStamp.Name = "dgvStamp";
 			this.dgvStamp.Size = new System.Drawing.Size(266, 150);
 			this.dgvStamp.TabIndex = 0;
 			this.dgvStamp.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvStamp_DataError);
-			// 
-			// colX
-			// 
-			this.colX.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.colX.DataPropertyName = "X";
-			this.colX.HeaderText = "X";
-			this.colX.Name = "colX";
-			this.colX.Width = 39;
-			// 
-			// colY
-			// 
-			this.colY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.colY.DataPropertyName = "Y";
-			this.colY.HeaderText = "Y";
-			this.colY.Name = "colY";
-			this.colY.Width = 39;
-			// 
-			// colColor
-			// 
-			this.colColor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.colColor.HeaderText = "Color";
-			this.colColor.Name = "colColor";
 			// 
 			// toolStrip1
 			// 
@@ -182,6 +161,29 @@
 			this.tbHeight.Size = new System.Drawing.Size(100, 20);
 			this.tbHeight.TabIndex = 3;
 			// 
+			// colX
+			// 
+			this.colX.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colX.DataPropertyName = "X";
+			this.colX.HeaderText = "X";
+			this.colX.Name = "colX";
+			this.colX.Width = 39;
+			// 
+			// colY
+			// 
+			this.colY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colY.DataPropertyName = "Y";
+			this.colY.HeaderText = "Y";
+			this.colY.Name = "colY";
+			this.colY.Width = 39;
+			// 
+			// colColor
+			// 
+			this.colColor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.colColor.DataPropertyName = "BrushName";
+			this.colColor.HeaderText = "Color";
+			this.colColor.Name = "colColor";
+			// 
 			// frmStampEditor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,9 +210,6 @@
 
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private System.Windows.Forms.DataGridView dgvStamp;
-		private System.Windows.Forms.DataGridViewTextBoxColumn colX;
-		private System.Windows.Forms.DataGridViewTextBoxColumn colY;
-		private System.Windows.Forms.DataGridViewComboBoxColumn colColor;
 		private System.Windows.Forms.ToolStrip toolStrip1;
 		private System.Windows.Forms.ToolStripButton tsbOpen;
 		private System.Windows.Forms.ToolStripButton tsbSave;
@@ -219,5 +218,8 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox tbWidth;
 		private System.Windows.Forms.TextBox tbHeight;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colX;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colY;
+		private System.Windows.Forms.DataGridViewComboBoxColumn colColor;
 	}
 }

@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 
@@ -9,7 +11,7 @@ namespace Loom
 	/// </summary>
 	public class Stamp
 	{
-		public Stamp(int width, int height, StampPoint[] fill, Font font)
+		public Stamp(int width, int height, List<StampPoint> fill, Font font)
 		{
 			Width = width;
 			Height = height;
@@ -17,9 +19,9 @@ namespace Loom
 			Font = font;
 		}
 
-		public int Width { get; }
-		public int Height { get; }
-		public StampPoint[] Fill { get; } = Enumerable.Empty<StampPoint>().ToArray();
+		public int Width { get; set; }
+		public int Height { get; set; }
+		public List<StampPoint> Fill { get; set; }
 
 		[JsonIgnore]
 		public Font Font { get; }
@@ -49,9 +51,16 @@ namespace Loom
 			Brush = brush;
 		}
 
-		public int X { get; }
-		public int Y { get; }
-		public Brush Brush { get; }
+		public int X { get; set; }
+		public int Y { get; set; }
+		[JsonIgnore]
+		public Brush Brush { get; set; }
+
+		public string BrushName
+		{
+			get { return typeof(Brush).Name; }
+			set { Brush = new SolidBrush(Color.FromName(value)); }
+		}
 
 		public Rectangle GetRectangle(int scale, int gridX, int gridY)
 		{
