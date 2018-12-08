@@ -16,7 +16,7 @@ namespace Loom
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new frmStamp());
+			Application.Run(new frmStampEditor());
 		}
 	}
 }

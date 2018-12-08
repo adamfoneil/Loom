@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using Newtonsoft.Json;
+using System.Drawing;
+using System.Linq;
 
 namespace Loom
 {
@@ -17,7 +19,9 @@ namespace Loom
 
 		public int Width { get; }
 		public int Height { get; }
-		public StampPoint[] Fill { get; }
+		public StampPoint[] Fill { get; } = Enumerable.Empty<StampPoint>().ToArray();
+
+		[JsonIgnore]
 		public Font Font { get; }
 
 		public void Draw(Graphics graphics, int scale, int gridX, int gridY)
