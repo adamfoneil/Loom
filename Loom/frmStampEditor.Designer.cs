@@ -42,12 +42,16 @@
 			this.colX = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colY = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colColor = new System.Windows.Forms.DataGridViewComboBoxColumn();
+			this.btnPreview = new System.Windows.Forms.Button();
+			this.pnlPreview = new System.Windows.Forms.Panel();
+			this.panel1 = new System.Windows.Forms.Panel();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvStamp)).BeginInit();
 			this.toolStrip1.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// splitContainer1
@@ -58,6 +62,8 @@
 			// 
 			// splitContainer1.Panel1
 			// 
+			this.splitContainer1.Panel1.Controls.Add(this.pnlPreview);
+			this.splitContainer1.Panel1.Controls.Add(this.panel1);
 			this.splitContainer1.Panel1.Controls.Add(this.dgvStamp);
 			this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
 			this.splitContainer1.Panel1.Controls.Add(this.toolStrip1);
@@ -184,6 +190,33 @@
 			this.colColor.HeaderText = "Color";
 			this.colColor.Name = "colColor";
 			// 
+			// btnPreview
+			// 
+			this.btnPreview.Location = new System.Drawing.Point(12, 3);
+			this.btnPreview.Name = "btnPreview";
+			this.btnPreview.Size = new System.Drawing.Size(75, 23);
+			this.btnPreview.TabIndex = 3;
+			this.btnPreview.Text = "Preview";
+			this.btnPreview.UseVisualStyleBackColor = true;
+			this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
+			// 
+			// pnlPreview
+			// 
+			this.pnlPreview.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pnlPreview.Location = new System.Drawing.Point(0, 252);
+			this.pnlPreview.Name = "pnlPreview";
+			this.pnlPreview.Size = new System.Drawing.Size(266, 198);
+			this.pnlPreview.TabIndex = 4;
+			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.btnPreview);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel1.Location = new System.Drawing.Point(0, 218);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(266, 34);
+			this.panel1.TabIndex = 5;
+			// 
 			// frmStampEditor
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +235,7 @@
 			this.toolStrip1.PerformLayout();
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
+			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -221,5 +255,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn colX;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colY;
 		private System.Windows.Forms.DataGridViewComboBoxColumn colColor;
+		private System.Windows.Forms.Panel pnlPreview;
+		private System.Windows.Forms.Button btnPreview;
+		private System.Windows.Forms.Panel panel1;
 	}
 }

@@ -24,7 +24,7 @@ namespace Loom
 		public List<StampPoint> Fill { get; set; }
 
 		[JsonIgnore]
-		public Font Font { get; }
+		public Font Font { get; set; }
 
 		public void Draw(Graphics graphics, int scale, int gridX, int gridY)
 		{

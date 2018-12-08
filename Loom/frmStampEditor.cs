@@ -80,5 +80,15 @@ namespace Loom
 		{
 			// ignore
 		}
+
+		private void btnPreview_Click(object sender, EventArgs e)
+		{
+			using (var g = pnlPreview.CreateGraphics())
+			{
+				_stamp.Font = this.Font;
+				int scale = Convert.ToInt32(Convert.ToDouble(pnlPreview.Width) / Convert.ToDouble(_stamp.Width));
+				_stamp.Draw(g, scale, 0, 0);
+			}
+		}
 	}
 }
