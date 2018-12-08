@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Loom
@@ -88,6 +89,28 @@ namespace Loom
 				_stamp.Font = this.Font;
 				int scale = Convert.ToInt32(Convert.ToDouble(pnlPreview.Width) / Convert.ToDouble(_stamp.Width));
 				_stamp.Draw(g, scale, 0, 0);
+			}
+		}
+
+		private void btnDraw_Click(object sender, EventArgs e)
+		{
+			const int repetitions = 20;
+
+			_stamp.Font = this.Font;
+			
+			int scale = Convert.ToInt32(Convert.ToDouble(splitContainer1.Panel2.Width) / repetitions);
+
+			using (var g = splitContainer1.Panel2.CreateGraphics())
+			{
+				for (int x = 0; x < repetitions; x += _stamp.Width)
+				{
+					for (int y = 0; y < repetitions; y += _stamp.Height)
+					{
+						_stamp.Draw(g, scale, x, y);
+						Thread.Sleep(50);
+					}
+				}
+
 			}
 		}
 	}

@@ -45,6 +45,7 @@
 			this.btnPreview = new System.Windows.Forms.Button();
 			this.pnlPreview = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnDraw = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
@@ -210,12 +211,23 @@
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.btnDraw);
 			this.panel1.Controls.Add(this.btnPreview);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 218);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(266, 34);
 			this.panel1.TabIndex = 5;
+			// 
+			// btnDraw
+			// 
+			this.btnDraw.Location = new System.Drawing.Point(188, 3);
+			this.btnDraw.Name = "btnDraw";
+			this.btnDraw.Size = new System.Drawing.Size(75, 23);
+			this.btnDraw.TabIndex = 4;
+			this.btnDraw.Text = "Draw";
+			this.btnDraw.UseVisualStyleBackColor = true;
+			this.btnDraw.Click += new System.EventHandler(this.btnDraw_Click);
 			// 
 			// frmStampEditor
 			// 
@@ -258,5 +270,6 @@
 		private System.Windows.Forms.Panel pnlPreview;
 		private System.Windows.Forms.Button btnPreview;
 		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Button btnDraw;
 	}
 }
