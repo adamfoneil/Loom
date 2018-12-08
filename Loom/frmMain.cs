@@ -29,24 +29,30 @@ namespace Loom
 				i += 1;
 			}*/
 
-			const int pointSize = 10;
+			const int pointSize = 20;
 
-			bool swap = false;
+			
 
-			for (int x = 0; x < this.ClientRectangle.Width; x += pointSize)
+			for (int x = 1; x < this.ClientRectangle.Width; x += pointSize)
 			{
-				for (int y = 0; y < this.ClientRectangle.Height; y += pointSize)
+				for (int y = 1; y < this.ClientRectangle.Height; y += pointSize)
 				{
-					if (((x / pointSize) % 2) == 0)
+					int xSquare = x / pointSize;
+					int ySquare = y / pointSize;
+
+					if ((xSquare % 2) == 0)
 					{
 						e.Graphics.FillRectangle(warpBrush, new Rectangle(new Point(x, y + pointSize), new Size(pointSize, pointSize)));
 					}
 					else
-					{						
-						int yJiggle = (swap) ? 10 : 0;
-						e.Graphics.FillRectangle(weftBrush, new Rectangle(new Point(x + (pointSize - 1 * pointSize), y + pointSize + yJiggle), new Size(pointSize, pointSize)));
-						swap = !swap;
-					}						
+					{
+						
+					}			
+					
+					if ((ySquare % 2) == 0)
+					{
+						e.Graphics.FillRectangle(weftBrush, new Rectangle(new Point(x + (pointSize - 1 * pointSize), y + pointSize), new Size(pointSize, pointSize)));
+					}
 				}
 			}
 			
